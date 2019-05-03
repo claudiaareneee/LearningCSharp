@@ -55,6 +55,14 @@ namespace HelloWorld
 {
     class Program
     {
+        // Class Method
+        public static void PrintHeader(string title)
+        {
+            Console.Write("\n\n\n\n");
+            Console.WriteLine(title + ":");
+            Console.WriteLine("-----------------------------------");
+        }
+
         // The ```Main``` method is a static method that resides inside a class or a struct.
         // The parameter of the Main method, args, is a string array that contains the 
         // command-line arguments used to invoke the program. Unlike in C++, the array 
@@ -62,6 +70,8 @@ namespace HelloWorld
         static void Main(string[] args)
         {
             // --------------- Basics ------------------
+            Program.PrintHeader("Basics");
+
             // Simple Hello world
             Console.Write(":) "); //Doesn't end with a line break
             Console.WriteLine("Hello World!"); //Ends with a line break
@@ -94,7 +104,7 @@ namespace HelloWorld
 
 
             // ---------- CONDITIONALS ----------
-
+            Program.PrintHeader("Conditionals");
             // Relational Operators : > < >= <= == !=
             // Logical Operators : && || ^ !
 
@@ -145,12 +155,12 @@ namespace HelloWorld
                     break;
             }
 
-        // Lable we can jump to with Goto
-        Cute:
-            Console.WriteLine("Toddlers are cute");
+            // Lable we can jump to with Goto
+            Cute:
+                Console.WriteLine("Toddlers are cute");
 
             // ---------- LOOPING ----------
-
+            Program.PrintHeader("Looping");
             int i = 0;
 
             while (i < 10)
@@ -198,11 +208,11 @@ namespace HelloWorld
 
             foreach (char c in randStr)
             {
-                Console.WriteLine(c);
+                Console.Write(c + "   ");
             }
 
             // ---------- STRINGS ----------
-
+            Program.PrintHeader("Strings");
             // Escape Sequences : \' \" \\ \b \n \t
 
             string sampString = "A bunch of random words";
@@ -250,6 +260,7 @@ namespace HelloWorld
             // ---------- STRINGBUILDER ----------
             // Each time you create a string you actually create another string in memory
             // StringBuilders are used when you want to be able to edit a string without creating new ones
+            Program.PrintHeader("StringBuilder");
 
             StringBuilder sb = new StringBuilder();
 
@@ -272,6 +283,7 @@ namespace HelloWorld
             Console.WriteLine(sb.ToString());
 
             // ---------- ARRAYS ----------
+            Program.PrintHeader("Arrays");
             // Declare an array
             int[] randNumArray;
 
@@ -334,6 +346,7 @@ namespace HelloWorld
 
             // ---------- LISTS ----------
             // A list unlike an array automatically resizes
+            Program.PrintHeader("Lists");
 
             // Create a list and add values
             List<int> numList = new List<int>();
@@ -385,6 +398,7 @@ namespace HelloWorld
             // ---------- EXCEPTION HANDLING ----------
             // All the exceptions 
             // msdn.microsoft.com/en-us/library/system.systemexception.aspx#inheritanceContinued
+            Program.PrintHeader("Exception Handling");
 
             try
             {
@@ -419,6 +433,7 @@ namespace HelloWorld
             }
 
             // ---------- CLASSES & OBJECTS ----------
+            Program.PrintHeader("Classes and Objects");
 
             Animal bulldog = new Animal(13, 50, "Spot", "Woof");
 
@@ -426,9 +441,10 @@ namespace HelloWorld
 
             bulldog.RunAnimal();
 
-            // Console.WriteLine("No. of Animals " + Animal.getNumOfAnimals());
+            Console.WriteLine("No. of Animals " + Animal.getNumOfAnimals());
 
             // ---------- ENUMS ----------
+            Program.PrintHeader("Enums");
 
             Temperature micTemp = Temperature.Low;
             Console.Write("What Temp : ");
@@ -455,6 +471,7 @@ namespace HelloWorld
             }
 
             // ---------- STRUCTS ----------
+            Program.PrintHeader("Structs");
             Customers bob = new Customers();
 
             bob.createCust("Bob", 15.50, 12345);
@@ -463,6 +480,7 @@ namespace HelloWorld
 
             // ---------- ANONYMOUS METHODS ----------
             // An anonymous method has no name and its return type is defined by the return used in the method
+            Program.PrintHeader("Anonymous Methods");
 
             GetSum sum = delegate (double num1, double num2)
             {
@@ -473,6 +491,7 @@ namespace HelloWorld
 
             // ---------- LAMBDA EXPRESSIONS ----------
             // A lambda expression is used to act as an anonymous function or expression tree
+            Program.PrintHeader("Lambda Expressions");
 
             // You can assign the lambda expression to a function instance
             Func<int, int, int> getSum = (x, y) => x + y;
@@ -492,6 +511,7 @@ namespace HelloWorld
             // ---------- FILE I/O ----------
             // The StreamReader and StreamWriter allows you to create text files while reading and 
             // writing to them
+            Program.PrintHeader("File I/0");
 
             string[] custs = new string[] { "Tom", "Paul", "Greg" };
 
@@ -514,6 +534,7 @@ namespace HelloWorld
 
 
             //------------------Animal Class-------------------------
+            Program.PrintHeader("More Classes");
             // Create an Animal object and call the constructor
             Animal spot = new Animal(15, 10, "Spot", "Woof");
 
@@ -578,5 +599,9 @@ namespace HelloWorld
             Console.Write("Hit Enter to Exit");
 
         }
+
     }
+   
 }
+
+
