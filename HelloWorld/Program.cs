@@ -314,7 +314,7 @@ namespace HelloWorld
             // Get the index of an item or -1
             Console.WriteLine("Where is 1 " + Array.IndexOf(randArray2, 1));
 
-            string[] names2 = { "Tom", "Paul", "Sally" };
+            string[] names2 = { "Lauren", "Orsini", "Lol" };
 
             // Join an array into a string
             string nameStr = string.Join(", ", names2);
